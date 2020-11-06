@@ -227,6 +227,7 @@ Create a function called `getArtistByIndex` that takes two arguments:
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`
 */
+
 function getArtistByIndex(array, num) {
   return `the artist at index ${num} is ${array[num].name}`;
 }  
@@ -286,11 +287,17 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(array) {
+  array.push({
+    id: 20,
+    name: 'Matthew Justice', 
+    years: '1991 - Present',
+    genre: 'Web Design', 
+    nationality: 'American',
+    bio: 'I love my wife :)'});
+    
+    return array;
   }
-
-  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Create a function called lotsOfArt() that takes one argument: 
@@ -301,12 +308,15 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array) {
+  let overAchievers = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].paintings > 100) {
+      overAchievers.push(array[i].name);
+    }
+  }
+  return overAchievers;
 }
-
-
-
 
 // 🎨🎨 STRETCH 🎨🎨//
 /* 💪💪💪💪💪💪 STRETCH 1: 💪💪💪💪💪💪 
