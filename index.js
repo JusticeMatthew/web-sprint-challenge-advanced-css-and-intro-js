@@ -389,7 +389,7 @@ function randomize(/* Code here */){
 // }
 
 function getAny(data, num) { 
-  let dead = [`Sorry all artists born in the ${num}'s died in the next century!`]; 
+  let dead = []; 
   for (let i = 0; i < data.length; i++) { 
     if (String(num).includes(data[i]["years"][1])  && String(num).includes(data[i]["years"][8])) { 
       dead.push(data[i].name);
