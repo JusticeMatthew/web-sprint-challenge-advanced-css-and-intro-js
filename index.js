@@ -372,7 +372,7 @@ function randomize(/* Code here */){
  /* 💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪
  Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
-// Not sure if this counts but I refactored task 4 to also accept a century, so you can choose which century you want artists from (For the artists array only 1800 or 1900 will return anything other than an empty array)
+// Not sure if this counts but I refactored task 4 to also accept a century, so you can choose which century you want artists from (For the 20 included artists only 1800 or 1900 will return anything other than my filler string)
 
 // function getAny(data, century) {        OLD FUNCTION BEFORE BRACKET NOTATION KNOWLEDGE
 //   let dead = [];
@@ -389,9 +389,9 @@ function randomize(/* Code here */){
 // }
 
 function getAny(data, num) { 
-  let dead = []; 
+  let dead = [`Sorry all artists born in the ${num}'s died in the next century!`]; 
   for (let i = 0; i < data.length; i++) { 
-    if (data[i]["years"][1] === num[1] && data[i]["years"][8] === num[1]) { 
+    if (String(num).includes(data[i]["years"][1])  && String(num).includes(data[i]["years"][8])) { 
       dead.push(data[i].name);
     } 
   }
