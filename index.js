@@ -393,9 +393,13 @@ function getAny(data, num) {
   for (let i = 0; i < data.length; i++) { 
     if (String(num).includes(data[i]["years"][1])  && String(num).includes(data[i]["years"][8])) { 
       dead.push(data[i].name);
-    } 
+    }  
   }
+  if (!dead.length) {
+    return `Sorry all artists born in the ${num}'s died in the next century!`
+  } else {
   return dead;
+  }
 }
  
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
