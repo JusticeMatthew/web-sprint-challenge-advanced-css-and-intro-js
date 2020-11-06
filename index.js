@@ -239,18 +239,31 @@ it returns an array with names of artists who were born in and died in 20th cent
 example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
+// function get20s(data) { 
+//   let dead = []; 
+//   for (let i = 0; i < data.length; i++) { 
+//     let years = data[i].years; 
+//     let birth = years.substring(0, 2); 
+//     let death = years.substring(years.length -2, years.length); 
+//     if (birth === '19' && parseInt(death) < 100) { 
+//       dead.push(data[i].name);
+//     } 
+//   }
+//   return dead;
+// }
+
+// MASSIVLEY SIMPLIFIED TASK 4. After better understanding object bracket notation!
+
 function get20s(data) { 
-  let dead = []; // Empty array to hold our names
-  for (let i = 0; i < data.length; i++) { //Initializing the loop to go through the array
-    let years = data[i].years; // Setting up a variable to hold the value of years which is a string
-    let birth = years.substring(0, 2); // set up a variable to hold a string of the first 2 numbers of the year value
-    let death = years.substring(years.length -2, years.length); // set up a variable to hold a string of the last 2 numbers the year value 
-    if (birth === '19' && parseInt(death) < 100) { // if the birth variable equals a string of '19' and the death variable (which is now being converted from a string to an int is less than 100) push them to the empty array
+  let dead = []; 
+  for (let i = 0; i < data.length; i++) { 
+    if (data[i]["years"][1] === '9' && data[i]["years"][8] === '9') { 
       dead.push(data[i].name);
     } 
   }
   return dead;
 }
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `removeArtist` that takes two arguments:
@@ -308,9 +321,9 @@ and returns an array with names of artists who painted more than 100 paintings.
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
 function lotsOfArt(array) {
-  let overAchievers = []; // Empty array to hold the names
-  for (let i = 0; i < array.length; i++) { //Initializing the loop to go through the array
-    if (array[i].paintings > 100) { // While looping if the paintings value at the index the loop is on is greater than 100 add the value of name from that same index to the new array
+  let overAchievers = [];                      // Empty array to hold the names
+  for (let i = 0; i < array.length; i++) {     // Initializing the loop to go through the array
+    if (array[i].paintings > 100) {            // While looping if the paintings value at the index the loop is on is greater than 100 add the value of name from that same index to the new array
       overAchievers.push(array[i].name);
     }
   }
@@ -359,16 +372,26 @@ function randomize(/* Code here */){
  /* 💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪
  Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
-// Not sure if this counts but I refactored task 4 to also accept a century, so you can choose which century you want artists from :)
+// Not sure if this counts but I refactored task 4 to also accept a century, so you can choose which century you want artists from (For the artists array only 1800 or 1900 will return anything other than an empty array)
 
-function getAny(data, century) { 
-  let dead = [];
-  let cent = String(century - 1);
-  for (let i = 0; i < data.length; i++) {
-    let years = data[i].years;
-    let birth = years.substring(0, 2);
-    let death = years.substring(years.length -4, years.length);
-    if (birth === cent && death < century * 100) {
+// function getAny(data, century) {        OLD FUNCTION BEFORE BRACKET NOTATION KNOWLEDGE
+//   let dead = [];
+//   let cent = String(century - 1);
+//   for (let i = 0; i < data.length; i++) {
+//     let years = data[i].years;
+//     let birth = years.substring(0, 2);
+//     let death = years.substring(years.length -4, years.length);
+//     if (birth === cent && death < century * 100) {
+//       dead.push(data[i].name);
+//     } 
+//   }
+//   return dead;
+// }
+
+function getAny(data, num) { 
+  let dead = []; 
+  for (let i = 0; i < data.length; i++) { 
+    if (data[i]["years"][1] === num[1] && data[i]["years"][8] === num[1]) { 
       dead.push(data[i].name);
     } 
   }
