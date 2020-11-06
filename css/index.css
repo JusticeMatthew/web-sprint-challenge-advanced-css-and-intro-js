@@ -76,6 +76,7 @@ nav{
 }
 nav a{
     color:#626262;
+    padding: 0 5%;
 }
 nav span{
     border-left:3px solid #626262;
@@ -134,3 +135,11 @@ button:hover{
 .artist img{
     width:100%;
 }
+
+/* MOBILE STYLES*/
+
+@media(max-width:500px) {
+
+
+
+} /* Mobile end braace */
