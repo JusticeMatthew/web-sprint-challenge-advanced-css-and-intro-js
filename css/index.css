@@ -107,7 +107,7 @@ nav span{
     width:80%;
 }
 button{
-    padding:1rem 2.5rem; /* Changeed this from % to rem because the transition was making it look weird when changing view size, hover effect is unaffected */
+    padding:1rem 2.5rem; /* Changeed this from % to rem because the transition animation was making it look weird when changing view size, hover effect is unaffected */
     font-size: 1.6rem;
     border-radius:6px;
     border:2px solid #626262;
@@ -133,7 +133,7 @@ button:hover{
     text-align:center;
 }
 .artist img{
-    width:100%;
+    width: 80%;
 }
 
 /* MOBILE STYLES*/
@@ -141,29 +141,32 @@ button:hover{
 @media(max-width:500px) {
 
     nav a{
-        font-size: 2rem;
+        font-size: 2rem; /* Lowered font size*/
     }
 
     nav span{
-        border-left:2px solid #626262;
+        border-left: 2px solid #626262; /* Slightly reduced border */
     }
 
     h1 {
-        font-size: 4rem;
+        font-size: 4rem; /* Lowered font size */
     }
 
     .artists-container{
-        display:flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width:100%;
-        margin:0;
+        margin:2% 0;
+        /* Switched to a column flexbox and adjusted the margins and width to look purtty */
     }
 
     .artist{
-        width: 80%;
-        text-align:center;
+        width: 80%; /* Adujusted width to match new page flow */
+    }
+
+    .artist img{
+        padding-bottom: 2%; /* A bit of padding to space things out, it was feeling cramped*/
     }
 
 } /* Mobile end braace */
