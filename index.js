@@ -215,7 +215,7 @@ console.log(artists[2].bio);
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-artists[8].name = "Vincent Van Gogh";
+artists[8].name = "Vincent Van Gogh"; 
 console.log(artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -229,7 +229,7 @@ Create a function called `getArtistByIndex` that takes two arguments:
 */
 
 function getArtistByIndex(array, num) {
-  return `the artist at index ${num} is ${array[num].name}`;
+  return `the artist at index ${num} is ${array[num].name}`; // Pretty basic example of how to access object values inside an array and put them in a string
 }  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -240,13 +240,12 @@ example born in 1901 and died in 1959 - included / born in 1889 and died in 1925
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(data) { 
-  let dead = [];
-  //let maxYears = parseInt('100')
-  for (let i = 0; i < data.length; i++) {
-    let years = data[i].years;
-    let birth = years.substring(0, 2);
-    let death = years.substring(years.length -2, years.length);
-    if (birth === '19' && death < 100) {
+  let dead = []; // Empty array to hold our names
+  for (let i = 0; i < data.length; i++) { //Initializing the loop to go through the array
+    let years = data[i].years; // Setting up a variable to hold the value of years which is a string
+    let birth = years.substring(0, 2); // set up a variable to hold a string of the first 2 numbers of the year value
+    let death = years.substring(years.length -2, years.length); // set up a variable to hold a string of the last 2 numbers the year value 
+    if (birth === '19' && parseInt(death) < 100) { // if the birth variable equals a string of '19' and the death variable (which is now being converted from a string to an int is less than 100) push them to the empty array
       dead.push(data[i].name);
     } 
   }
@@ -264,12 +263,12 @@ Create a function called `removeArtist` that takes two arguments:
 */
 
 function removeArtist(array, num) {
-  for (let i = 0; i < array.length; i++) {
-    if (i === num) {
+  for (let i = 0; i < array.length; i++) { //Initializing the loop to go through the array
+    if (i === num) { // if the index number the loop is on is equal to the index argument given, then remove the object at that index
       array.splice(i, 1);
     }
   }
-  return array.length;
+  return array.length; // return the original arrays modified length NOT the new array
 }
    
 /**
@@ -287,7 +286,7 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(array) {
+function addArtist(array) { // Pretty straight forward usage of the .push method to add my new object to the existing array
   array.push({
     id: 20,
     name: 'Matthew Justice', 
@@ -309,9 +308,9 @@ and returns an array with names of artists who painted more than 100 paintings.
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
 function lotsOfArt(array) {
-  let overAchievers = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].paintings > 100) {
+  let overAchievers = []; // Empty array to hold the names
+  for (let i = 0; i < array.length; i++) { //Initializing the loop to go through the array
+    if (array[i].paintings > 100) { // While looping if the paintings value at the index the loop is on is greater than 100 add the value of name from that same index to the new array
       overAchievers.push(array[i].name);
     }
   }
