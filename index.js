@@ -360,7 +360,7 @@ function randomize(/* Code here */){
  /* 💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪
  Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
-// Not sure if this counts but I refactored tast 4 to also accept a century, so you can choose which century you want artists from :)
+// Not sure if this counts but I refactored task 4 to also accept a century, so you can choose which century you want artists from :)
 
 function getAny(data, century) { 
   let dead = [];

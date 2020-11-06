@@ -10,17 +10,17 @@
 <body>
     <header>
      <nav>
-         <a href="#">Home</a>
+         <a href="#" aria-label="Home">Home</a>
          <span></span>
-         <a class="bordered" href="#">About</a>
+         <a href="#" aria-label="About">About</a> <!--removed the class of 'bordered' since in the CSS the spans are being used for border styling not the anchor-->
          <span></span> 
-         <a href="#">Contact</a>
+         <a href="#" aria-label="Contact">Contact</a>
      </nav>    
     </header>
     <section class="title-container">
         <div>
             <h1>50 Influential<br>Artists</h1>
-            <button>Contact Us</button>
+            <button aria-label="Contact Us">Contact Us</button>
         </div>  
         <hr>
     </section>
