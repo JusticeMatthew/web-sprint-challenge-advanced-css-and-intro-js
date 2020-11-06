@@ -241,12 +241,12 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(data) { 
   let dead = [];
-  let maxYears = parseInt('100')
+  //let maxYears = parseInt('100')
   for (let i = 0; i < data.length; i++) {
     let years = data[i].years;
     let birth = years.substring(0, 2);
     let death = years.substring(years.length -2, years.length);
-    if (birth === '19' && death < maxYears) {
+    if (birth === '19' && death < 100) {
       dead.push(data[i].name);
     } 
   }
@@ -360,10 +360,23 @@ function randomize(/* Code here */){
  /* 💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪
  Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
 
+// Not sure if this counts but I refactored tast 4 to also accept a century, so you can choose which century you want artists from :)
+
+function getAny(data, century) { 
+  let dead = [];
+  let cent = String(century - 1);
+  for (let i = 0; i < data.length; i++) {
+    let years = data[i].years;
+    let birth = years.substring(0, 2);
+    let death = years.substring(years.length -4, years.length);
+    if (birth === cent && death < century * 100) {
+      dead.push(data[i].name);
+    } 
+  }
+  return dead;
+}
  
- 
- 
- /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
+/* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
  function foo(){
   console.log('its working');
   return 'bar';
